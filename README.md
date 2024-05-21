@@ -19,8 +19,8 @@
 ## 주요 활용 기술
 - #01)(스크립트) [Firebase이용한 로그인](https://cafe.naver.com/bbangnity/71)
 <details>
-<summary>적용 코드</summary>
-  ![로그인](./gitImage/로그인.gif)
+<summary>적용 이미지</summary>
+![로그인](./GitImage/로그인.gif)
 </details>
 
 ***
