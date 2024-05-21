@@ -187,3 +187,263 @@
 </details>
 
 ***
+
+- #07)(스크립트) [클래스를 이용한 리스트 및 배열 데이터 관리](https://cafe.naver.com/bbangnity/74)
+<details>
+<summary>적용 코드</summary>
+
+```
+    [System.Serializable]
+    public class MonsterData // 기본 몬스터 데이터 클래스
+    {
+    public int Code = -1;
+    public int TypeValue = -1; // 0 : 광산 , 1 : 공격, 2 : 방어, 3 : 지원
+    public string Imagepath;
+    public int Rating;
+    public string Name;
+    public int Level;
+    public float MaxHealth;
+    public float NowHealth;
+    public float Attack;
+    public float Defense;
+    public float Attack_Speed;
+    public int HasSkill_1 = -1;
+    public int HasSkill_2 = -1;
+    public int HasSkill_3 = -1;
+    public int HasSkill_4 = -1;
+    }
+
+    public List<MonsterData> monsters = new List<MonsterData>(); // 몬스터 데이터 리스트
+
+```
+
+</details>
+
+***
+
+- #08)(이미지) [PlayerPrefs을 이용한 플레이어의 BestClearTime 툴팁 표시](https://cafe.naver.com/bbangnity/103)
+<details>
+<summary>적용 이미지</summary>
+
+![클리어타임](./GitImage/클리어타임.gif)
+
+</details>
+
+***
+
+- #09)(이미지) [자동전투 시스템](https://cafe.naver.com/bbangnity/74)
+<details>
+<summary>적용 이미지</summary>
+
+![자동플레이](./GitImage/자동플레이.gif)
+
+</details>
+
+***
+
+- #10)(이미지) [게임 턴제 배틀 시스템](https://cafe.naver.com/bbangnity/74)
+<details>
+<summary>적용 이미지</summary>
+
+![턴제](./GitImage/턴제.gif)
+
+</details>
+
+***
+
+- #11)(스크립트) [오브젝트 풀링을 이용한 스폰](https://cafe.naver.com/bbangnity/92)
+<details>
+<summary>적용 코드</summary>
+
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PoolManager : MonoBehaviour
+{
+    // 몬스터 소환을 위한 풀 매니저 (오브젝트 풀링)
+
+    public GameObject[] prefabs; // 프리팹 배열
+    List<GameObject>[] pools; // 프리팹별로 오브젝트를 담을 풀 리스트 배열
+
+    private void Awake()
+    {
+        // 프리팹 배열 길이만큼 리스트 배열 초기화
+        pools = new List<GameObject>[prefabs.Length];
+
+        // 각 프리팹별 리스트 초기화
+        for (int i = 0; i < pools.Length; i++)
+        {
+            pools[i] = new List<GameObject>();
+        }
+    }
+
+    // 오브젝트 풀에서 비활성화된 오브젝트를 가져오거나 새로 생성하여 반환
+    public GameObject Get(int i)
+    {
+        GameObject select = null;
+
+        // 해당 인덱스의 풀에서 비활성화된 오브젝트를 찾음
+        foreach (GameObject item in pools[i])
+        {
+            if (!item.activeSelf)
+            {
+                select = item; // 비활성화된 오브젝트를 선택
+                select.SetActive(true); // 활성화
+                break;
+            }
+        }
+
+        // 비활성화된 오브젝트를 찾지 못한 경우 새로 생성하여 풀에 추가
+        if (!select)
+        {
+            select = Instantiate(prefabs[i], transform);
+            pools[i].Add(select);
+        }
+
+        return select;
+    }
+}
+
+```
+
+</details>
+
+***
+
+- #12)(이미지) [방치형 방식의 광산](https://cafe.naver.com/bbangnity/78)
+<details>
+<summary>적용 이미지</summary>
+
+![광산](./GitImage/광산.gif)
+
+</details>
+
+***
+
+- #13)(이미지) [드래그 앤 드랍을 이용한 인벤토리 관리 및 배치 시스템](https://cafe.naver.com/bbangnity/85)
+<details>
+<summary>적용 이미지</summary>
+
+![드래그드랍](./GitImage/드래그드랍.gif)
+
+</details>
+
+***
+
+- #14)(이미지) [피봇과 포지션을 통한 해상도 대처]
+<details>
+<summary>적용 이미지</summary>
+
+![해상도](./GitImage/해상도.gif)
+
+</details>
+
+***
+
+- #15)(이미지) [EventSystem을 이용한 건물 클릭 및 씬 이동](https://cafe.naver.com/bbangnity/73)
+<details>
+<summary>적용 이미지</summary>
+
+![씬이동](./GitImage/씬이동.gif)
+
+</details>
+
+***
+
+- #16)(이미지) [더블클릭 및 더블터치로 몬스터 정보 불러오기](https://cafe.naver.com/bbangnity/80)
+<details>
+<summary>적용 이미지</summary>
+
+![더블클릭](./GitImage/더블클릭.gif)
+
+</details>
+
+***
+
+- #17)(스크립트) [텍스트 자동 이동 시스템](https://cafe.naver.com/bbangnity/89)
+<details>
+<summary>적용 코드</summary>
+
+```
+public class TextMove : MonoBehaviour
+{
+    // 텍스트가 생성되면 저절로 지정한 오프셋으로 이동되게 만드는 스크립트
+    public float duration = 2.0f; // 애니메이션 지속 시간
+    public float endYOffset = -100.0f; // 끝 Y 오프셋
+
+    private Text textComponent;
+    private Vector3 startPosition;
+    private float startTime;
+
+    void Start()
+    {
+        textComponent = GetComponent<Text>();
+        // 시작 시간 설정
+        startTime = Time.time;
+        // 시작 위치 저장
+        startPosition = transform.position;
+    }
+
+    void Update()
+    {
+        // 현재 시간에서 시작 시간을 뺀 값의 비율 계산
+        float ratio = (Time.time - startTime) / duration;
+        // 보간된 Y 위치 계산
+        float interpolatedY = Mathf.Lerp(startPosition.y, startPosition.y + endYOffset, ratio);
+        // 텍스트 위치 업데이트
+        transform.position = new Vector3(startPosition.x, interpolatedY, startPosition.z);
+
+        // 애니메이션 종료 확인
+        if (ratio >= 1.0f)
+        {
+            Destroy(gameObject); // 애니메이션 종료 후 텍스트 게임 오브젝트 삭제
+        }
+    }
+}
+```
+
+</details>
+
+***
+
+- #18)(이미지) [화면 자동 이동 시스템](https://cafe.naver.com/bbangnity/75)
+<details>
+<summary>적용 이미지</summary>
+
+![화면이동](./GitImage/화면이동.gif)
+
+</details>
+
+***
+
+- #19)(이미지) [룬 적용 및 해제](https://cafe.naver.com/bbangnity/96)
+<details>
+<summary>적용 이미지</summary>
+
+![룬](./GitImage/룬.gif)
+
+</details>
+
+***
+
+- #20)(이미지) [합성 시스템](https://cafe.naver.com/bbangnity/98)
+<details>
+<summary>적용 이미지</summary>
+
+![합성](./GitImage/합성.gif)
+
+</details>
+
+***
+
+- #20)(이미지) [테마별 랜덤 몬스터 소환](https://cafe.naver.com/bbangnity/76)
+<details>
+<summary>적용 이미지</summary>
+
+![소환](./GitImage/소환.gif)
+
+</details>
+
+***
