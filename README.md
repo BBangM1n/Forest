@@ -17,10 +17,12 @@
 ## 유튜브 영상 링크
 - [유튜브 영상 링크](https://www.youtube.com/watch?v=v50233gSmvE)
 ## 주요 활용 기술
-- #01)(스크립트) [Firebase이용한 로그인](https://cafe.naver.com/bbangnity/71)
+- #01)(이미지) [Firebase이용한 로그인](https://cafe.naver.com/bbangnity/71)
 <details>
 <summary>적용 이미지</summary>
+  
 ![로그인](./GitImage/로그인.gif)
+
 </details>
 
 ***
@@ -87,3 +89,52 @@
 </details>
 
 ***
+
+- #03)(스크립트) [NewtonJSON으로 데이터 저장 관리](https://cafe.naver.com/bbangnity/101)
+<details>
+<summary>적용 코드</summary>
+  
+```
+   public void SaveMonsterData() // 데이터 Json으로 저장시키는 함수
+    {
+        string jsonString = JsonConvert.SerializeObject(monsters);
+        File.WriteAllText(monsterDataPath, jsonString);
+
+
+        string jsonString3 = JsonConvert.SerializeObject(Abilitys);
+        File.WriteAllText(abilityDataPath, jsonString3);
+
+        string jsonString4 = JsonConvert.SerializeObject(runestone);
+        File.WriteAllText(runestoneDataPath, jsonString4);
+    }
+    public void LoadMonsterData2()
+    {
+            Debug.LogWarning("Monster data file not found."); // 경고 메시지 출력
+            TextAsset jsonFile = Resources.Load<TextAsset>("Json/monsterData");
+            string jsonData = jsonFile.text;
+            monsters = JsonConvert.DeserializeObject<List<MonsterData>>(jsonData);
+
+
+            Debug.LogWarning("MonsterInventory data file not found."); // 경고 메시지 출력
+            TextAsset jsonFile2 = Resources.Load<TextAsset>("Json/abilityData");
+            string jsonData2 = jsonFile2.text;
+            Abilitys = JsonConvert.DeserializeObject<List<AbilityData>>(jsonData2);
+
+            Debug.LogWarning("runestone data file not found."); // 경고 메시지 출력
+            TextAsset jsonFile3 = Resources.Load<TextAsset>("Json/runestoneDataPath");
+            string jsonData3 = jsonFile3.text;
+            runestone = JsonConvert.DeserializeObject<List<RuneStone>>(jsonData3);
+
+    }
+```
+
+</details>
+
+***
+- #04)(이미지) [NewtonJSON으로 데이터 저장 관리](https://cafe.naver.com/bbangnity/88)
+<details>
+<summary>적용 코드</summary>
+
+![툴팁](./GitImage/툴팁.gif)
+
+</details>
