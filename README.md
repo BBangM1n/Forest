@@ -1,19 +1,19 @@
 # Forest
 ## 게임 장르 : 3D 턴제 수집형 RPG
-## 게임 소개 : 여러유형의 몬스터와 룬을 파밍하여 월드를 클리어하는 턴제 방식의 게임입니다.
+## 게임 소개 : 여러유형의 몬스터와 룬을 파밍하여 월드를 클리어하는 턴제 방식의 게임입니다. ( PC / 모바일 둘다 가능합니다. )
 ## 개발 목적 : 평소에 좋아하던 턴제 게임 기능들을 직접 구현 했습니다.
 ## 사용 엔진 : UNITY 2022.3.15f1
-## 개발 기간 : 2023.10.31 ~ 2024.03.10
+## 개발 기간 : 2024.04.22 ~ 2024.05.20
 ## 사용 서드파티
 - NewtonJSOn
 - FireBase (Auth, DataBase)
 ## 포트폴리오 빌드 파일 
-- [구글 드라이브 링크 (폰빌드)](https://drive.google.com/file/d/1Vlu0-TCDOu_4R6dct8ti3Sbd1dxhQFvo/view?usp=drive_link)
-- [구글 드라이브 링크 (컴퓨터빌드)](https://drive.google.com/file/d/1Vlu0-TCDOu_4R6dct8ti3Sbd1dxhQFvo/view?usp=drive_link)
+- [구글 드라이브 링크 (폰빌드)](https://drive.google.com/file/d/1M6DGcc7NXsxjc8Iiz4H56YeGTWR0rZBu/view?usp=drive_link)
+- [구글 드라이브 링크 (컴퓨터빌드)](https://drive.google.com/file/d/1r_VcA_yPS1Dhi6umT22NGmPqBKLu45no/view?usp=drive_link)
 - 테스트용 계정 : 1234@1234.1 / 123412
 - 빌드파일 실행 시 한글 경로가 있다면 접속이 안될수도 있으므로 주의 부탁드립니다.
 ## 포트폴리오 에셋 파일 
-- [구글 드라이브 링크 (에셋파일)](https://drive.google.com/file/d/1Vlu0-TCDOu_4R6dct8ti3Sbd1dxhQFvo/view?usp=drive_link)
+- [구글 드라이브 링크 (에셋파일)](https://drive.google.com/file/d/1XbgiA8YEmbkuCFdqxQFaWFG1ZAtk1Af7/view?usp=sharing)
 ## 유튜브 영상 링크
 - [유튜브 영상 링크](https://www.youtube.com/watch?v=v50233gSmvE)
 ## 주요 활용 기술
