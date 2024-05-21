@@ -131,10 +131,59 @@
 </details>
 
 ***
-- #04)(이미지) [NewtonJSON으로 데이터 저장 관리](https://cafe.naver.com/bbangnity/88)
+- #04)(이미지) [Event Trigger을 이용한 스킬 툴팁 표시](https://cafe.naver.com/bbangnity/88)
 <details>
-<summary>적용 코드</summary>
+<summary>적용 이미지</summary>
 
 ![툴팁](./GitImage/툴팁.gif)
 
 </details>
+
+***
+
+- #05)(이미지) [스킬에 따른 액션 및 파티클 생성](https://cafe.naver.com/bbangnity/95)
+<details>
+<summary>적용 이미지</summary>
+
+![스킬](./GitImage/스킬.gif)
+
+</details>
+
+***
+
+- #06)(스크립트) [Linq를 이용한 몬스터 턴순서 정리](https://cafe.naver.com/bbangnity/74)
+<details>
+<summary>적용 코드</summary>
+
+```
+    void SortByAttackSpeed()
+    {
+        turnspeed = turnspeed.OrderByDescending(ts => ts.Speed).ToList();
+
+        // 공격속도가 같은 경우를 식별하여 처리
+        var groups = turnspeed.GroupBy(ts => ts.Speed);
+        foreach (var group in groups)
+        {
+            if (group.Count() > 1) // 공격속도가 같은 캐릭터가 여러 명인 경우
+            {
+                // 캐릭터들의 순서를 랜덤하게 섞음
+                var shuffledGroup = group.OrderBy(x => Random.value);
+                foreach (var ts in shuffledGroup)
+                {
+                    Debug.Log("Value: " + ts.value + ", Speed: " + ts.Speed);
+                }
+            }
+            else // 공격속도가 같은 캐릭터가 없거나 한 명인 경우
+            {
+                foreach (var ts in group)
+                {
+                    Debug.Log("Value: " + ts.value + ", Speed: " + ts.Speed);
+                }
+            }
+        }
+    }
+```
+
+</details>
+
+***
