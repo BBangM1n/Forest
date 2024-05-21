@@ -332,7 +332,7 @@ public class PoolManager : MonoBehaviour
 
 ***
 
-- #14)(이미지) [피봇과 포지션을 통한 해상도 대처]
+- #14)(이미지) 피봇과 포지션을 통한 해상도 대처
 <details>
 <summary>적용 이미지</summary>
 
