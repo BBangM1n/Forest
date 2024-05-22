@@ -438,7 +438,7 @@ public class TextMove : MonoBehaviour
 
 ***
 
-- #20)(이미지) [테마별 랜덤 몬스터 소환](https://cafe.naver.com/bbangnity/76)
+- #21)(이미지) [테마별 랜덤 몬스터 소환](https://cafe.naver.com/bbangnity/76)
 <details>
 <summary>적용 이미지</summary>
 
