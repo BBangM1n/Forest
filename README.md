@@ -5,7 +5,7 @@
 ## 사용 엔진 : UNITY 2022.3.15f1
 ## 개발 기간 : 2024.04.22 ~ 2024.05.20
 ## 사용 서드파티
-- NewtonJSOn
+- NewtonJSON
 - FireBase (Auth, DataBase)
 ## 포트폴리오 빌드 파일 
 - [구글 드라이브 링크 (폰빌드)](https://drive.google.com/file/d/1M6DGcc7NXsxjc8Iiz4H56YeGTWR0rZBu/view?usp=drive_link)
@@ -15,7 +15,7 @@
 ## 포트폴리오 에셋 파일 
 - [구글 드라이브 링크 (에셋파일)](https://drive.google.com/file/d/1XbgiA8YEmbkuCFdqxQFaWFG1ZAtk1Af7/view?usp=sharing)
 ## 유튜브 영상 링크
-- [유튜브 영상 링크](https://www.youtube.com/watch?v=v50233gSmvE)
+- [유튜브 영상 링크](https://youtu.be/SU8fOyicThc)
 ## 주요 활용 기술
 - #01)(이미지) [Firebase이용한 로그인](https://cafe.naver.com/bbangnity/71)
 <details>
